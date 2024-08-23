@@ -1,0 +1,238 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 7 / 2;
+    background-color: #00171f;
+}
+
+.div1 .sidebar {
+    width: 100px;
+    height: 100%;
+    position: fixed;
+    background-color: #00171f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s;
+}
+
+.logo {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.nav {
+    width: 100%;
+    text-align: center;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav ul li {
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #00a8e8;
+    transition: color 0.3s;
+}
+
+.nav ul li:hover {
+    background-color: #003459;
+}
+
+.nav ul li a:hover {
+    color: #007ea7;
+}
+
+.dropdown, .dropdown1, .dropdown2 {
+    position: relative;
+}
+
+.dropdown-content, .dropdown-content1, .dropdown-content2 {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: rgba(0, 23, 31, 0.9);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 3;
+    color: #00ACC1;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown1:hover .dropdown-content1,
+.dropdown2:hover .dropdown-content {
+    display: block;
+}
+
+.input-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+input[type="text"], input[type="number"], input[type="time"] {
+    width: 180px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+button {
+    background-color: #007ea7;
+    color: #edf2f4;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+    margin-top: 0;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #00ACC1;
+    padding: 4px;
+    text-align: left;
+}
+
+table th {
+    background-color: #2e2e2e;
+}
+
+.time {
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.theme-switch {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.theme-toggle-input {
+    display: none;
+}
+
+.theme-toggle-input + .slider {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    width: 50px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle-input + .slider:hover {
+    background-color: transparent;
+}
+
+.theme-toggle-input:checked + .slider {
+    background-color: transparent;
+}
+
+.theme-toggle-input + .slider .gg-smart-home-light {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    transform: scale(var(--ggs, 1));
+    width: 10px;
+    height: 14px;
+    border: 2px solid;
+    right: 0px;
+    border-radius: 14px;
+    box-shadow: 0 11px 0 -4px;
+    background: currentColor;
+}
+
+.theme-toggle-input:checked + .slider .gg-smart-home-light {
+    background-color: #007ea7;
+}
+
+.div3, .div4, .div5, .div6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #00171f;
+}
+
+.div3 { grid-area: 1 / 2 / 4 / 7; }
+.div4 { grid-area: 1 / 7 / 4 / 13; }
+.div5 { grid-area: 4 / 2 / 7 / 7; }
+.div6 { grid-area: 4 / 7 / 7 / 13; }
+
+.tradingview-widget-container {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .parent {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    .div1 { grid-area: 1 / 1 / 3 / 7; }
+    .div3 { grid-area: 3 / 1 / 7 / 7; }
+    .div4 { grid-area: 7 / 1 / 11 / 7; }
+    .div5 { grid-area: 11 / 1 / 15 / 7; }
+    .div6 { grid-area: 15 / 1 / 19 / 7; }
+}
