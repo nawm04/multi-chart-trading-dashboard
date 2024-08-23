@@ -17,7 +17,7 @@ The four interactive charts featured on the dashboard are provided by **TradingV
 
 ## Installation
 Since this is a static site:
-1. Clone the repository: `git clone https://github.com/yourusername/your-repo-name.git`
+1. Clone the repository: `git clone https://github.com/nawm04/multi-chart-trading-dashboard
 2. Open `index.html` in your browser to view the site.
 
 ## Usage
